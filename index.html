@@ -1,0 +1,190 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>TCC</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
+    </head>
+
+    <header>
+        <section class="header-logo-menu">
+            <div class="container">
+                <div class="logo"><img src="img/Sugetrix.png"></div>
+                <div class="menu-header">
+                    <ul class="menu">
+                        <li class="item-menu link1"><a class="text-header" href="#oque">O que é?</a></li>
+                        <li class="item-menu link2"><a class="text-header" href="#ferramentas">Ferramentas</a></li>
+                        <li class="item-menu link3"><a class="text-header" href="#">Login</a></li>
+                        <li class="item-menu link4"><a class="button-register" href="#">Registrar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <body>
+        
+        <section class="section-global sec1">
+            <div class="container">
+                <div class="conteudo-sec1">
+                    <div class="conteudo-1">
+                        <div class="content-a-sec1">
+                            <p>Descubra o poder do Sugetrix!</p>
+
+                            <script>
+
+                                function typeWrite(elemento) {
+                                    const textoArray = elemento.innerHTML.split('');
+                                    elemento.innerHTML = '';
+
+                                    textoArray.forEach((letra, i) => {
+                                        setTimeout(() => elemento.innerHTML += letra, 75 * i);
+                                        console.log(i);
+                                    });
+                                }
+
+                                const titulo = document.querySelector('p')
+                                typeWrite(titulo);
+
+                            </script>
+
+                        </div>       
+                    </div>
+
+                    <div class="conteudo-1">
+                        <div class="content-b-sec1">
+                            <p class="text-green">
+                                Alimentação e Saúde<br>
+                            </p>
+                            <p class="text-black">
+                                Sua fonte de inspiração para uma vida saudável e ativa!
+                            </p>
+                            <div class="button">
+                                <a href="#">Registrar</a>
+                            </div>
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sec2 tree-cards">
+            <div class="container">
+                <div class="sec2-title" id="oque"><p>O que é o Sugetrix?</p></div>
+                <div class="main-tree-cards box from-bottom js-play-on-screen">
+                    <div class="card card1">
+                        <div class="content-card">
+                            <div class="card-image"><img src="img/alimentos.png"></div>
+                            <div class="card-title">
+                                <p>Tenha uma alimentação mais saudável</p>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Encontre alimentos melhores para a sua saúde de 
+                                    acordo com suas necessidades. Podendo escolher entre
+                                    diversas substituições para fazem em suas refeições.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card2">
+                        <div class="content-card">
+                            <div class="card-image"><img src="img/exercício.png"></div>
+                            <div class="card-title">
+                                <p>Comece uma rotina de atividades físicas</p>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Para ajudar você a criar o hábio de se exercitar. 
+                                    Descubra a atividade física que se adéque com sua rotina.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card card3">
+                        <div class="content-card">
+                            <div class="card-image"><img src="img/saúde.png"></div>
+                            <div class="card-title">
+                                <p>Melhore sua qualidade de vida</p>
+                            </div>
+                            <div class="card-text">
+                                <p>
+                                    Descubra quais mudanças são melhores para sua saúde de acordo
+                                    com seu perfil e intercorrências que possui.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+        <section class="main-carrousel-home">
+            <div class="container">
+                <div class="content-carrousel" id="ferramentas">
+                    <p>Ferramentas</p>
+                    <div class="carrousel-home">
+                        <ul class="screens">
+                            <li id="s1">
+                                <div class="screens-title">
+                                    <div class="screens-image"><img src="img/localização.png"></div>
+                                    <p>Localização de academias</p>
+                                </div>
+                                    <P>
+                                        Encontre a localização das academias ao ar livre e das
+                                        academias privadas por meio da sua localização atual ou
+                                        endereço inserido. Com essa ferramenta, você pode
+                                        encontrar rapidamente academias próximas para praticar
+                                        exercícios. 
+                                    </P>
+                            </li>
+                            <li id="s2" class="left">
+                                <div class="screens-title">
+                                    <div class="screens-image"><img src="img/Controle.png"></div>
+                                    <p>Controle de Pressão e Glicemia</p>
+                                </div>
+                                    <P>
+                                        Insira suas leituras de pressão arterial e/ou glicemia
+                                        e vizualize em um gráfico de fácil leitura, mostrando 
+                                        se estão dentro ou acima do limite. Ajudando nas 
+                                        decições informadas sobre sua saúde.
+                                    </P>
+                            </li>
+                            <li id="s3" class="active">
+                                <div class="screens-title">
+                                    <div class="screens-image"><img src="img/substituição.png   "></div>
+                                    <p>Substituições alimentares</p>
+                                </div>
+                                    <p class="active">
+                                        Com base no seu perfil é oferecido sugestões para
+                                        substituições de alimentos que são consumidos com
+                                        frequência, levando em conta sua condição de saúde e
+                                        renda. Buscando uma melhora na sua saúde e qualidade 
+                                        de vida.
+                                    </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="buttons-carrousel">
+                        <button class="left buttons" type="button" id="button-left"><p class="left">&#60;</p></button>
+                        <button class="right buttons" type="button" id="button-right"><p class="right">&#62;</p></button>
+                    </div>
+                    <div class="button">
+                        <a href="#">Registrar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+        <script  src="js/script.js"></script>
+
+    </body>
+
+    <footer>
+        <section class="header-logo-menu">
+            <div class="container">
+                <div class="logo"><img src="img/Sugetrix.png"></div>
+            </div>
+        </section>
+    </footer>
+</html>
