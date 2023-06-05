@@ -2,77 +2,99 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>TCC</title>
+        <title>Login</title>
         <link rel="stylesheet" type="text/css" href="css/register.css" media="screen" />
+        <link rel="shortcut icon" href="img/Icon-Sugetrix-logo.png">
+
+        <script src="https://accounts.google.com/gsi/client" async defer></script>
+        <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+
+        <script>
+            function handleCredentialResponse(response) {
+                const data = jwt_decode(response.credential)
+                console.log(data)
+            }
+
+            window.onload = function () {
+                google.accounts.id.initialize({
+                    client_id: "952898542546-g1hu8hl7n8ois194gdt0tfc933k17qls.apps.googleusercontent.com",
+                    callback: handleCredentialResponse
+                });
+
+                google.accounts.id.renderButton(
+                    document.getElementById("buttonDiv"), { 
+                        theme: "outline", 
+                        size: "large",
+                        type: "standard",
+                        shape: "pill",
+                        text: "continue_with",
+                        logo_alignment: "center"
+                    }  // customization attributes
+                );
+
+                google.accounts.id.prompt(); // also display the One Tap dialog
+            }
+        </script>
     </head>
     <header>
         <section class="header-logo-menu">
             <div class="container">
-                <div class="logo"><img src="img/Policia_Militar_de_Minas_Gerais-logo-4B64297CCE-seeklogo.com.png"></div>
+                <div class="logo"><img src="img/Sugetrix.png"></div>
             </div>
         </section>
     </header>
 
     <body>
-
         <section class="forms">
-            <div class="container">
+            <div class="container-form">
                 <div class="form-register">
-                    <form method="POST" action="php/login_usu.php">
-                        <div class="form-input">
+                    <form><!--method="POST" action="php/login_usu.php"-->
+                        <div class="text">
+                            <p>Login</p>
+                        </div>
 
-                            <div class="single" data-validate = "Valid email is: a@b.c">
-                                <label for="email">Email</label>
-                                <input type="text" name="email" name="txt_email" maxlength="60" placeholder="Digite seu email"  class="input-single" required>
-                            </div>
+                        <div class="single" data-validate="Valid email is: a@b.c">
+                            <input type="text" name="email" name="txt_email" maxlength="60" class="input-single" required>
+                            <label for="email">Email</label>
+                        </div>
 
-                            <div class="single">
-                                <label for="senha">Senha:</label><br>
-                                <input type="password" id="senha" name="txt_senha" maxlength="20" placeholder="Digite sua senha"  class="input-single" required>
-                            </div>
+                        <div class="single">
+                            <img id="exibirPassword" onclick="showHidePassword()" src="img/exibir-senha.png">
+                            <input type="password" id="senha" name="txt_senha" maxlength="20" class="input-single" required>
+                            <label for="senha">Senha:</label>
+                        </div>
 
-                            <input type="submit" value="Cadastrar-se">
+                        <input type="submit" value="Login" class="button">
 
-                            <!--Botão do Google Começo-->
-                            <!--
-    Seu Google client ID
-    Esse client ID foi criado no passo anterior
-  -->
-  <meta name="google-signin-client_id" content="577372409629-qhc4909e656f8jg0tobev2026nocnifs.apps.googleusercontent.com">
-      <!-- html do botão -->
-      <div id="meu-botao"></div>
+                        <div class="link">
+                            <p>Não possui uma conta? <a href="register.html" class="link-hover">Cadastrar-se</a></p> 
+                        </div>
 
-      <hr/>
-      <a href="javascript:void(0);" onclick="signOut();">Sign out</a>
-    </div>
-    <hr />
-    <footer>
-      <p>&copy; Fábrica de Código</p>
-    </footer>
-  </div>
-
-  <script src="js/botaoGog.js"></script>
-
-  <!--Google Platform Library-->
-  <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script>
-
-  <!--JQuery e Bootstrap - Não são obrigatórios para ao autenticação -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</body>
-                            <!--Botão do Google Fim-->
+                        <div class="other">
+                            <div class="line"></div>
+                            <p>Ou</p>
+                            <div class="line"></div>
+                        </div>
+                        <div class="button_google">
+                            <div id="buttonDiv"></div> 
                         </div>
                     </form>
+                    <div class="terms">
+                        <a href="Termos/Terms-Use.html" class="terms-single">Termo de uso</a>
+                        <p>|</p>
+                        <a href="Termos/Privacy.html" class="terms-single">Privacidade</a>
+                    </div>
                 </div>
             </div> 
         </section>
 
+        <script src="js/exibir-senha.js"></script>
     </body>
 
     <footer>
         <section class="header-logo-menu">
             <div class="container">
-                <div class="logo"><img src="img/Policia_Militar_de_Minas_Gerais-logo-4B64297CCE-seeklogo.com.png"></div>
+                <div class="logo"><img src="img/Sugetrix.png"></div>
             </div>
         </section>
     </footer>

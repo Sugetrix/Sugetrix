@@ -2,8 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>TCC</title>
+        <title>Cadastro</title>
         <link rel="stylesheet" type="text/css" href="css/register.css" media="screen" />
+        <link rel="shortcut icon" href="img/Icon-Sugetrix-logo.png">
     </head>
     <header>
         <section class="header-logo-menu">
@@ -17,7 +18,7 @@
         <section class="forms">
             <div class="container-form">
                 <div class="form-register">
-                    <form><!--method="POST" action="php/cad_usu.php"-->
+                    <form class="validate-form"><!--method="POST" action="php/cad_usu.php"-->
                         <div class="text">
                             <p>Criar Conta</p>
                         </div>
@@ -27,7 +28,7 @@
                             <label for="nome">Primeiro nome:</label>                   
                         </div>
 
-                        <div class="single" data-validate = "Valid email is: a@b.c">
+                        <div class="single validate-input" data-validate = "Valid email is: a@b.c">
                             <input type="text" name="email" name="txt_email" maxlength="60" class="input-single" required>
                             <label for="email">Email</label>
                         </div>
@@ -45,12 +46,22 @@
                         </div>
 
                         <input type="submit" value="Cadastrar-se" class="button">
+
+                        <div class="link">
+                            <p>Já possui uma conta? <a href="login.html">Faça login</a></p> 
+                        </div>
                     </form>
+                    <div class="terms">
+                        <a href="Termos/Terms-Use.html" class="terms-single">Termo de uso</a>
+                        <p>|</p>
+                        <a href="Termos/Privacy.html" class="terms-single">Privacidade</a>
+                    </div>
                 </div>
             </div> 
         </section>
 
         <script src="js/exibir-senha.js"></script>
+        <script src="js/alerta-email.js"></script>
     </body>
 
     <footer>
