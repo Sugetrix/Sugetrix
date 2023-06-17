@@ -40,6 +40,76 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100%;
     width: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+  
+.content-sec1 {
+    width: 100%;
+    display: flex;
+}
+
+.content1 {
+    width: 450px;
+    display: flex;
+}
+
+.content1 .profile-picture {
+    margin: 0 auto;
+}
+
+.content1 img {
+    width: 192px;
+    height: 192px;
+}
+
+.content2 {
+    width: 650px;
+}
+
+.content2 .information {
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.content2 .information .name {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    color: #4e4e4e;
+}
+
+.content2 .information .text {
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+}
+
+.line {
+    background-color: #4e4e4e;
+    height: 2px;
+    width: 100%;
+}
+
+.text-script p::after {
+    content: '|';
+    margin-left: 5px;
+    opacity: 1;
+    animation: pisca .7s infinite;
+}
+
+@keyframes pisca {
+    0%, 100% {
+        opacity: 0
+    }
+    50% {
+        opacity: 1;
+    }
 }

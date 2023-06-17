@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro</title>
         <link rel="stylesheet" type="text/css" href="css/register.css" media="screen" />
         <link rel="shortcut icon" href="img/Icon-Sugetrix-logo.png">
@@ -18,7 +19,7 @@
         <section class="forms">
             <div class="container-form">
                 <div class="form-register">
-                    <form class="validate-form"><!--method="POST" action="php/cad_usu.php"-->
+                    <form class="validate-form" method="POST" action="php/cad_usu.php">
                         <div class="text">
                             <p>Criar Conta</p>
                         </div>
@@ -29,7 +30,7 @@
                         </div>
 
                         <div class="single validate-input" data-validate = "Valid email is: a@b.c">
-                            <input type="text" name="email" name="txt_email" maxlength="60" class="input-single" required>
+                            <input type="text" name="txt_email" maxlength="60" class="input-single" required>
                             <label for="email">Email</label>
                         </div>
 

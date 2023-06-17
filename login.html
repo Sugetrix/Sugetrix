@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="css/register.css" media="screen" />
         <link rel="shortcut icon" href="img/Icon-Sugetrix-logo.png">
@@ -54,17 +55,17 @@
                         </div>
 
                         <div class="single" data-validate="Valid email is: a@b.c">
-                            <input type="text" name="email" name="txt_email" maxlength="60" class="input-single" required>
+                            <input type="text" name="txt_email_log" maxlength="60" class="input-single" required>
                             <label for="email">Email</label>
                         </div>
 
                         <div class="single">
                             <img id="exibirPassword" onclick="showHidePassword()" src="img/exibir-senha.png">
-                            <input type="password" id="senha" name="txt_senha" maxlength="20" class="input-single" required>
+                            <input type="password" id="senha" name="txt_senha_log" maxlength="20" class="input-single" required>
                             <label for="senha">Senha:</label>
                         </div>
 
-                        <input type="submit" value="Login" class="button" onclick="window.location.href = 'after/index.html'">
+                        <input type="submit" value="Login" class="button">
 
                         <div class="link">
                             <p>Não possui uma conta? <a href="register.html" class="link-hover">Cadastrar-se</a></p> 
