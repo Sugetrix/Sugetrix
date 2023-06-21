@@ -491,11 +491,66 @@ section.main-carrousel-home .buttons-carrousel {
   color: #fff;
 }
 
+/* Estilizando o botão mobile menu */
+.mobile-menu-icon button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  justify-content: center;
+  background: none;
+  border-color: #42cd8c;
+  display: none;
+}
 
+.mobile-menu-icon .sandwich span {
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background: #42cd8c;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  transition: 0.2s;
+}
+
+.mobile-menu-icon .close {
+  padding-top: 7px;
+}
+
+.mobile-menu-icon .close span {
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background: #42cd8c;
+  margin-top: -5px;
+  justify-content: center;
+}
+
+.mobile-menu-icon .close span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+  transition: 0.2s;
+}
+
+.mobile-menu-icon .close span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-icon .close span:nth-child(3) {
+  transform: rotate(45deg);
+  top: 8px;
+  transition: 0.2s;
+}
+
+.mobile-menu {
+  display: none;
+}
 
 /*------------------------------------*\
     RESPONSIVE
 \*------------------------------------*/
+
 /* For Mobile devices */
 @media only screen and (min-width:320px) and (max-width: 480px) {
 
@@ -503,6 +558,7 @@ section.main-carrousel-home .buttons-carrousel {
    width: 100%;
    box-shadow: 0px 6px 16px -5px rgba(168, 168, 168, 0.41);
   }
+
   .card {
     width: 100%;
     margin: 0 auto;
@@ -511,6 +567,10 @@ section.main-carrousel-home .buttons-carrousel {
 
   section.header-logo-menu .container {
     padding: 0 20px 0 20px;
+  }
+
+  section.header-logo-menu {
+    display: flex;
   }
 
   .conteudo-sec1 .conteudo-1 .content-a-sec1 {
@@ -525,15 +585,18 @@ section.main-carrousel-home .buttons-carrousel {
 
   .conteudo-sec1 .conteudo-1 {
     width: 100%;
+    margin-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   section.header-logo-menu .container .logo img {
     width: 100%;
-    max-width: 130px;
+    max-width: 150px;
   }
   
 
-  section.header-logo-menu .container .menu-header {
+  section.header-logo-menu .container .menu-header .menu {
     display: none;
   }
 
@@ -550,19 +613,19 @@ section.main-carrousel-home .buttons-carrousel {
   }
 
   .carrousel-home .screens {
-      width: 100%;
-      display: flex;
-      justify-content: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .carrousel-home .screens > li.active {
-      transform: none;
-      width: 82%;
+    transform: none;
+    width: 82%;
   }
 
   .carrousel-home .screens > li.left {
-      transform: translate(-100%, -15%);
-      width: 82%;
+    transform: translate(-100%, -15%);
+    width: 82%;
   }
 
   .carrousel-home .screens > li.right {
@@ -573,8 +636,74 @@ section.main-carrousel-home .buttons-carrousel {
     margin-top: 0px;
   }
 
+  .conteudo-sec1 .conteudo-1 .content-b-sec1 .button a {
+    margin-bottom: -50px
+  }
 
- 
+  section.sec2.tree-cards {
+    margin-top: -160px;
+  }
+
+  .buttons:hover {
+    border: solid #42cd8c;
+    background-color: #fff;
+  }
+
+  .buttons p:hover {
+    color: #42cd8c;
+  }
+
+  .mobile-menu-icon button {
+    display: block;
+    width: 50px;
+    height: 50px;
+  }
+
+  .mobile-menu {
+    display: none;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }  
+
+  .mobile-menu ul li .text-header {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+  }
+
+  .mobile-menu ul li {
+    padding: 3px;
+    list-style-type: none;
+  }
+
+  .open {
+    display: flex;
+  }
+
+  .mobile-menu ul li .button-register {
+    background-image: none;
+    width: 100%;
+    max-width: 110px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 60px;
+    margin-top: 22px;
+    color: #42cd8c;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    border-style: solid;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0 auto;
+    text-decoration: none;
+  }
 }
 
 
