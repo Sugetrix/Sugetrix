@@ -71,11 +71,13 @@ CREATE TABLE IF NOT EXISTS `tabela_doenca` (
   PRIMARY KEY (`Cod_Doenca_Usu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela banco_tcc_mtl.tabela_doenca: ~2 rows (aproximadamente)
+-- Copiando dados para a tabela banco_tcc_mtl.tabela_doenca: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `tabela_doenca` DISABLE KEYS */;
 REPLACE INTO `tabela_doenca` (`Cod_Doenca_Usu`, `Tipo_Doenca_Usu`) VALUES
 	(0, 'Nada'),
-	(1, 'Diabetes');
+	(1, 'Hipertensão'),
+	(2, 'Diabetes'),
+	(3, 'Hipertensão e Diabet');
 /*!40000 ALTER TABLE `tabela_doenca` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela banco_tcc_mtl.tabela_intolerancia
@@ -86,12 +88,13 @@ CREATE TABLE IF NOT EXISTS `tabela_intolerancia` (
   PRIMARY KEY (`Cod_Into_Usu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela banco_tcc_mtl.tabela_intolerancia: ~3 rows (aproximadamente)
+-- Copiando dados para a tabela banco_tcc_mtl.tabela_intolerancia: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `tabela_intolerancia` DISABLE KEYS */;
 REPLACE INTO `tabela_intolerancia` (`Cod_Into_Usu`, `Tipo_Into_Usu`) VALUES
 	(0, 'Nada'),
 	(1, 'Lactose'),
-	(2, 'Glúten');
+	(2, 'Glúten'),
+	(3, 'Lactose e Glúten');
 /*!40000 ALTER TABLE `tabela_intolerancia` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela banco_tcc_mtl.tabela_med_gli
@@ -104,7 +107,7 @@ CREATE TABLE IF NOT EXISTS `tabela_med_gli` (
   PRIMARY KEY (`Cod_Med_Gli`),
   KEY `FK_Id_Usu_Gli` (`Id_Usuario`),
   CONSTRAINT `FK_Id_Usu_Gli` FOREIGN KEY (`Id_Usuario`) REFERENCES `tabela_usuario` (`Id_Usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela banco_tcc_mtl.tabela_med_gli: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `tabela_med_gli` DISABLE KEYS */;
@@ -120,7 +123,7 @@ CREATE TABLE IF NOT EXISTS `tabela_med_hiper` (
   PRIMARY KEY (`Cod_Med_Hiper`),
   KEY `FK_Id_Usu_Hiper` (`Id_Usuario`),
   CONSTRAINT `FK_Id_Usu_Hiper` FOREIGN KEY (`Id_Usuario`) REFERENCES `tabela_usuario` (`Id_Usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela banco_tcc_mtl.tabela_med_hiper: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `tabela_med_hiper` DISABLE KEYS */;
@@ -180,13 +183,13 @@ CREATE TABLE IF NOT EXISTS `tabela_usuario` (
   CONSTRAINT `FK_Doenca_Usu` FOREIGN KEY (`Cod_Doenca_Usu`) REFERENCES `tabela_doenca` (`Cod_Doenca_Usu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_Into_Usu` FOREIGN KEY (`Cod_Into_Usu`) REFERENCES `tabela_intolerancia` (`Cod_Into_Usu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_Renda_Usu` FOREIGN KEY (`Cod_Renda_Usu`) REFERENCES `tabela_renda` (`Cod_Renda_Usu`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela banco_tcc_mtl.tabela_usuario: ~17 rows (aproximadamente)
+-- Copiando dados para a tabela banco_tcc_mtl.tabela_usuario: ~19 rows (aproximadamente)
 /*!40000 ALTER TABLE `tabela_usuario` DISABLE KEYS */;
 REPLACE INTO `tabela_usuario` (`Id_Usuario`, `CPF_Usu`, `Nome_Usu`, `Telefone_Usu`, `Email_Usu`, `Senha_Usu`, `Freq_AtivFis_Usu`, `Cod_Doenca_Usu`, `Cod_Renda_Usu`, `Cod_Into_Usu`, `Gene_Usu`) VALUES
-	(1, '14370690617', 'Talles', '1699978500', 'tallesmiguel0510@gmail.com', 'AA', 0, 1, 1, 1, NULL),
-	(2, '111111111', 'Seila', NULL, 'algo@gmail.com', 'EE', 0, 0, 0, 0, NULL),
+	(1, '14370690617', 'Talles', '1699978500', 'tallesmiguel0510@gmail.com', 'AA', 0, 2, 1, 1, NULL),
+	(2, '111111111', 'Seila', NULL, 'algo@gmail.com', 'EE', 0, 3, 0, 0, NULL),
 	(6, '', '', '', '', '', 0, 0, 0, 0, NULL),
 	(8, '', '', '', '', '', 0, 0, 0, 0, NULL),
 	(9, '', 'Talles', '', '', 'secso', 0, 0, 0, 0, NULL),
@@ -202,11 +205,11 @@ REPLACE INTO `tabela_usuario` (`Id_Usuario`, `CPF_Usu`, `Nome_Usu`, `Telefone_Us
 	(19, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL),
 	(20, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL),
 	(21, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL),
-	(22, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL);
+	(22, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL),
+	(23, '', '', NULL, '', '', 0, 0, 0, 0, NULL);
 /*!40000 ALTER TABLE `tabela_usuario` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
-tabela_usuario

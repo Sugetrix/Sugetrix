@@ -15,8 +15,13 @@
 
     if($quantidade > 0) {
         $row = $resultado->fetch_object();
+        $codDoencaUsu = $row->Cod_Doenca_Usu;
+        $codIntoUsu = $row->Cod_Into_Usu;
+
         $_SESSION["txt_email_log"] = $usuario;
         $_SESSION["nome_usuario"] = $row->Nome_Usu;
+        $_SESSION["cod_doenca_usu"] = $codDoencaUsu;
+        $_SESSION["cod_into_usu"] = $codIntoUsu;
     
         include ('../after/index.php');
     }  else {

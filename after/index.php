@@ -37,9 +37,56 @@
                                 </p>
                             </div>
                             <div class="text">
-                                <p>Hipertenso</p>
-                                <p>Intolerante a lactose</p>
-                                <p>Diabético</p>
+                                <p>
+                                    <?php
+                                        if (isset($_SESSION["cod_doenca_usu"])) {
+                                            $codDoencaUsu = $_SESSION["cod_doenca_usu"];
+
+                                            switch ($codDoencaUsu) {
+                                                case 1:
+                                                    echo "Doença: Hipertensão";
+                                                    break;
+                                                case 2:
+                                                    echo "Doença: Diabetes";
+                                                    break;
+                                                case 3;
+                                                    echo "Doença: Hipertensão e Diabetes";
+                                                    break;
+                                                default:
+                                                    // Caso o valor seja 0
+                                                    break;
+                                            }
+
+                                        } else {
+                                            header('Location: ../login.html'); // Redireciona para a página de usuário caso o login não tenha sido realizado
+                                        }
+                                    ?>
+                                </p>
+                                <p>
+                                    <?php
+                                        if (isset($_SESSION["cod_into_usu"])) {
+                                            $codIntoUsu = $_SESSION["cod_into_usu"];
+
+                                            switch ($codIntoUsu) {
+                                                case 1:
+                                                    echo "Restrição: Lactose";
+                                                    break;
+                                                case 2:
+                                                    echo "Restrição: Glúten";
+                                                    break;
+                                                case 3;
+                                                    echo "Restrição: Lactose e Glúten";
+                                                    break;
+                                                default:
+                                                    // Caso o valor seja 0
+                                                    break;
+                                            }
+
+                                        } else {
+                                            header('Location: ../login.html'); // Redireciona para a página de usuário caso o login não tenha sido realizado
+                                        }
+                                    ?>
+                                </p>
                             </div>
                         </div>
                         <div class="alter-button">
