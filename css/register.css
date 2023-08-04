@@ -47,7 +47,7 @@ section {
 .container-form {
     position: relative;
     width: 450px;
-    height: 550px;
+    height: 650px;
     background: #fff;
     border-radius: 18px;
     display: flex;
@@ -115,6 +115,7 @@ input:-webkit-autofill:active {
     font-weight: 700;
     text-align: center;
     color: #2d2d2d;
+    margin-bottom: 10px;
 }
 
 .button {
@@ -276,3 +277,36 @@ input:-webkit-autofill:active {
     color: #adadad;
     margin: 0 15px;
 }
+
+.error {
+    display: flex;
+    justify-content: center;
+    width: 200px;
+    margin: 0 auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center; 
+    border: 1px solid red; 
+    background-color: #ff000008;
+    animation: aparece .7s;
+}
+
+.None-error {
+    display: none;
+}
+
+@keyframes aparece {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.error p {
+    font-size: 1.1em;
+    font-family: 'Lato', sans-serif;
+    color: #ff0000e6;
+}
+

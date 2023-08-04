@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `tabela_alimento` (
   CONSTRAINT `FK_Cod_Categ` FOREIGN KEY (`Cod_Categ`) REFERENCES `tabela_cate_alimento` (`Cod_Categ`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela banco_tcc_mtl.tabela_alimento: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela banco_tcc_mtl.tabela_alimento: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `tabela_alimento` DISABLE KEYS */;
 REPLACE INTO `tabela_alimento` (`Cod_Ali`, `Nome_Ali`, `Cod_Categ`, `Indi_Diab`, `Indi_Hiper`, `Pont_Ali`, `Pont_Rend_Ali`, `Sazon__Ini`, `Sazon_Fim`, `Pont_Rend_Sazon`, `Into_Lact`, `Int_Gluten`) VALUES
 	(1, 'Pão Integral', 3, 0, 0, 0, 3, '0000-00-00', '0000-00-00', 1, 0, 1);
@@ -170,12 +170,13 @@ CREATE TABLE IF NOT EXISTS `tabela_usuario` (
   `Nome_Usu` varchar(50) NOT NULL,
   `Telefone_Usu` varchar(15) DEFAULT NULL,
   `Email_Usu` varchar(60) NOT NULL,
-  `Senha_Usu` varchar(20) NOT NULL,
+  `Senha_Usu` varchar(255) NOT NULL,
   `Freq_AtivFis_Usu` int(11) NOT NULL,
   `Cod_Doenca_Usu` int(11) NOT NULL DEFAULT '0',
   `Cod_Renda_Usu` int(11) NOT NULL DEFAULT '0',
   `Cod_Into_Usu` int(11) NOT NULL DEFAULT '0',
   `Gene_Usu` int(11) DEFAULT NULL,
+  `Imagem_Usu` varchar(50) DEFAULT '../img/perfil-teste.png',
   PRIMARY KEY (`Id_Usuario`),
   KEY `FK_Renda_Usu` (`Cod_Renda_Usu`),
   KEY `FK_Into_Usu` (`Cod_Into_Usu`),
@@ -183,30 +184,17 @@ CREATE TABLE IF NOT EXISTS `tabela_usuario` (
   CONSTRAINT `FK_Doenca_Usu` FOREIGN KEY (`Cod_Doenca_Usu`) REFERENCES `tabela_doenca` (`Cod_Doenca_Usu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_Into_Usu` FOREIGN KEY (`Cod_Into_Usu`) REFERENCES `tabela_intolerancia` (`Cod_Into_Usu`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `FK_Renda_Usu` FOREIGN KEY (`Cod_Renda_Usu`) REFERENCES `tabela_renda` (`Cod_Renda_Usu`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela banco_tcc_mtl.tabela_usuario: ~19 rows (aproximadamente)
+-- Copiando dados para a tabela banco_tcc_mtl.tabela_usuario: ~6 rows (aproximadamente)
 /*!40000 ALTER TABLE `tabela_usuario` DISABLE KEYS */;
-REPLACE INTO `tabela_usuario` (`Id_Usuario`, `CPF_Usu`, `Nome_Usu`, `Telefone_Usu`, `Email_Usu`, `Senha_Usu`, `Freq_AtivFis_Usu`, `Cod_Doenca_Usu`, `Cod_Renda_Usu`, `Cod_Into_Usu`, `Gene_Usu`) VALUES
-	(1, '14370690617', 'Talles', '1699978500', 'tallesmiguel0510@gmail.com', 'AA', 0, 2, 1, 1, NULL),
-	(2, '111111111', 'Seila', NULL, 'algo@gmail.com', 'EE', 0, 3, 0, 0, NULL),
-	(6, '', '', '', '', '', 0, 0, 0, 0, NULL),
-	(8, '', '', '', '', '', 0, 0, 0, 0, NULL),
-	(9, '', 'Talles', '', '', 'secso', 0, 0, 0, 0, NULL),
-	(10, '', 'Talles', '', '', 'secso', 0, 0, 0, 0, NULL),
-	(11, '', 'Talles', '', '', 'secso', 0, 0, 0, 0, NULL),
-	(12, '', 'Talles', '', '', 'secso', 0, 0, 0, 0, NULL),
-	(13, '', 'Talles', NULL, '', 'secso', 0, 0, 0, 0, NULL),
-	(14, '', 'Talles', NULL, '', 'secso', 0, 0, 0, 0, NULL),
-	(15, '', 'Talles', NULL, 'teste@gmail.com', 'secso', 0, 0, 0, 0, NULL),
-	(16, '', 'Talles', NULL, 'teste@gmail.com', 'as', 0, 0, 0, 0, NULL),
-	(17, '', 'Talles', NULL, 'teste@gmail.com', 'as', 0, 0, 0, 0, NULL),
-	(18, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL),
-	(19, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL),
-	(20, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL),
-	(21, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL),
-	(22, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL),
-	(23, '', '', NULL, '', '', 0, 0, 0, 0, NULL);
+REPLACE INTO `tabela_usuario` (`Id_Usuario`, `CPF_Usu`, `Nome_Usu`, `Telefone_Usu`, `Email_Usu`, `Senha_Usu`, `Freq_AtivFis_Usu`, `Cod_Doenca_Usu`, `Cod_Renda_Usu`, `Cod_Into_Usu`, `Gene_Usu`, `Imagem_Usu`) VALUES
+	(22, '', 'sads', NULL, 'asdd@gmail.com', 'ads', 0, 0, 0, 0, NULL, '../img/perfil-teste.png'),
+	(24, '', 'cu', NULL, 'pinto@gmail.com', '1234', 0, 0, 0, 0, NULL, '../img/perfil-teste.png'),
+	(25, '', 'mateus', NULL, 'mateuscarraro1@gmail.com', '11', 0, 0, 0, 0, NULL, '../img/perfil-teste.png'),
+	(27, '', 'milena', NULL, 'milenaporn@gmail.com', '$2y$10$T6tNSyEKhlNk2', 0, 0, 0, 0, NULL, '../img/perfil-teste.png'),
+	(28, '', 'daslda', NULL, 'ads', '$2y$10$OHDS4oX/0OVWx', 0, 0, 0, 0, NULL, '../img/perfil-teste.png'),
+	(29, '', 'talles', NULL, 'tallesmiguel0510@gmail.com', '$2y$10$ZMomNqiKCCTJIfFJxegceOltc/NcROL2hJPYLuZUdismhw52IdZxa', 0, 1, 0, 2, NULL, '../img/perfil-hamburguer.png');
 /*!40000 ALTER TABLE `tabela_usuario` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
